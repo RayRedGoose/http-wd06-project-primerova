@@ -2,7 +2,12 @@
 
 require 'config.php';
 require 'database.php';
+require 'libs/functions.php';
 
+$errors = array();
+$success = array();
+
+session_start();
 
 // router
 $uri = $_SERVER['REQUEST_URI'];
@@ -15,6 +20,38 @@ switch ($uri[0]) {
   case '':
     include 'modules/main/main.php';
     break;
+
+    // USERS
+
+  case 'login':
+    include ROOT . '\modules\login\login.php';
+    break;
+
+  case 'registration':
+    include ROOT . '\modules\login\registration.php';
+    break;
+
+  case 'logout':
+    include ROOT . '\modules\login\logout.php';
+    break;
+
+  case 'lost-password':
+    include ROOT . '\modules\login\lost-password.php';
+    break;
+
+  case 'set-new-password':
+    include ROOT . '\modules\login\set-new-password.php';
+    break;
+
+  case 'profile':
+    include ROOT . '\modules\profile\profile.php';
+    break;
+
+  case 'profile-edit':
+    include ROOT . '\modules\profile\profile-edit.php';
+    break;
+
+    // end of USERS
 
   case 'about':
     include 'modules/about/about.php';
