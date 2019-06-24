@@ -3,8 +3,8 @@
 
 
 
-include ROOT . '\views\parts\header.tpl';
+include ROOT . '\views\parts\head.tpl';
 include ROOT . '\views\pages\error404.tpl';
-include ROOT . '\views\parts\footer.tpl';
+include ROOT . '\views\parts\foot.tpl';
 
 ?>
