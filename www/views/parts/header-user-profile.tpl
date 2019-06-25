@@ -8,8 +8,8 @@
 	</div>
 	<div class="header-user__profil-block">
 		<div class="header-user__name">
-			<?=$_SESSION['logged_user']['name']?> 
-			<?=$_SESSION['logged_user']['secondname']?>
+			<?=$_SESSION['logged_user']['name']?>
+			<?=$_SESSION['logged_user']['lastname']?>
 		</div>
 		<div class="header-user__rank">Пользователь</div>
 		<div class="header-user__buttons-group">

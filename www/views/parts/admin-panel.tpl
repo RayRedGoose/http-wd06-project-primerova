@@ -7,8 +7,8 @@
 		</div>
 		<div class="header-admin__block">
 			<div class="header-admin__name">
-				<?=$_SESSION['logged_user']['name']?> 
-      			<?=$_SESSION['logged_user']['secondname']?>
+				<?=$_SESSION['logged_user']['name']?>
+      			<?=$_SESSION['logged_user']['lastname']?>
 			</div>
 			<a class="badge-link" href="<?=HOST?>profile">
 				<div class="badge">Администратор</div>
