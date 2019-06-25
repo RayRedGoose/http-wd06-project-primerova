@@ -6,7 +6,7 @@
 					<a class="header__logo-icon-link" href="#"><i class="far fa-paper-plane"></i></a>
 					<div class="header__general">
 						<p class="header__title mb-0">
-							<a class="header__title" href="index.html">Супер Сайт</a>
+							<a class="header__title" href="<?=HOST?>">Супер Сайт</a>
 						</p>
 					</div>
 				</div>
