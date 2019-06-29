@@ -1,12 +1,11 @@
 <?php
 
-$details = R::find('about');
+$currentUser = $_SESSION['logged_user'];
 
-$personName = $details[1]['name'];
-$personDscrp = $details[1]['dscrp'];
+$title = 'Профиль пользователя';
 
 ob_start();
-include ROOT . '\views\pages\main.tpl';
+include ROOT . '\views\pages\profile\profile.tpl';
 $content = ob_get_contents();
 ob_end_clean();
 

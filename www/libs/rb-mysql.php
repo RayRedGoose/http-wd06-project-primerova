@@ -667,7 +667,7 @@ class RPDO implements Driver
 	 * @var string
 	 */
 	protected $mysqlCharset = '';
-	
+
 	/**
 	 * @var string
 	 */
@@ -2689,7 +2689,7 @@ class OODBBean implements\IteratorAggregate,\ArrayAccess,\Countable,Jsonable
 				throw new RedException( 'Cannot cast to bean.' );
 			}
 		}
-		
+
 		if ( $isFieldLink ){
 			unset( $this->properties[ $fieldName ]);
 			$this->properties[ $property ] = NULL;
@@ -2849,13 +2849,13 @@ class OODBBean implements\IteratorAggregate,\ArrayAccess,\Countable,Jsonable
 		if (!isset($this->__info['model']) || !$this->__info['model']) {
 			return NULL;
 		}
-		
+
 		$overrideDontFail = FALSE;
 		if ( strpos( $method, '@' ) === 0 ) {
 			$method = substr( $method, 1 );
 			$overrideDontFail = TRUE;
 		}
-		
+
 		if ( !method_exists( $this->__info['model'], $method ) ) {
 
 			if ( self::$errorHandlingFUSE === FALSE || $overrideDontFail ) {
@@ -5971,7 +5971,7 @@ abstract class AQueryWriter
 		if ( count( self::$sqlFilters ) ) {
 			$sqlFilterStr = $this->getSQLFilterSnippet( $type );
 		}
-		
+
 		if ( is_array ( $conditions ) && !empty ( $conditions ) ) {
 			$sql = $this->makeSQLFromConditions( $conditions, $bindings, $addSql );
 		} else {
@@ -6134,7 +6134,7 @@ abstract class AQueryWriter
 		} else {
 			$sql = $this->glueSQLCondition( $addSql );
 		}
-		
+
 		$sql    = "SELECT COUNT(*) FROM {$table} {$sql} -- keep-cache";
 
 		return (int) $this->adapter->getCell( $sql, $bindings );
@@ -6185,7 +6185,7 @@ abstract class AQueryWriter
 		} else {
 			$sql = $this->glueSQLCondition( $addSql );
 		}
-		
+
 		$sql    = "DELETE FROM {$table} {$sql}";
 
 		$this->adapter->exec( $sql, $bindings );
@@ -6530,7 +6530,7 @@ class MySQL extends AQueryWriter implements QueryWriter
 		$charset_collate = $this->adapter->getDatabase()->getMysqlEncoding( TRUE );
 		$charset = $charset_collate['charset'];
 		$collate = $charset_collate['collate'];
-		
+
 		$sql   = "CREATE TABLE $table (id INT( 11 ) UNSIGNED NOT NULL AUTO_INCREMENT, PRIMARY KEY ( id )) ENGINE = InnoDB DEFAULT CHARSET={$charset} COLLATE={$collate} ";
 
 		$this->adapter->exec( $sql );
@@ -6934,12 +6934,12 @@ abstract class Repository
 	 * addition, deleted 'trash can' or residue. Next, the different groups
 	 * of beans will be processed accordingly and the reference bean (i.e.
 	 * the one that was passed to the method as an argument) will be stored.
-	 * Each type of list (own/shared) has 3 bean processors: 
+	 * Each type of list (own/shared) has 3 bean processors:
 	 *
 	 * - trashCanProcessor : removes the bean or breaks its association with the current bean
 	 * - additionProcessor : associates the bean with the current one
 	 * - residueProcessor  : manages beans in lists that 'remain' but may need to be updated
-	 * 
+	 *
 	 * This method first groups the beans and then calls the
 	 * internal processing methods.
 	 *
@@ -13749,7 +13749,7 @@ use RedBeanPHP\RedException as RedException;
  *
  * This is a helper or service class containing frequently used
  * array functions for dealing with SQL queries.
- * 
+ *
  * @file    RedBeanPHP/Util/ArrayTool.php
  * @author  Gabor de Mooij and the RedBeanPHP Community
  * @license BSD/GPLv2
@@ -13813,7 +13813,7 @@ class ArrayTool
 	 * @return array
 	 */
 	public static function flat( $array, $result = array() )
-	{		
+	{
 		foreach( $array as $value ) {
 			if ( is_array( $value ) ) $result = self::flat( $value, $result );
 			else $result[] = $value;
@@ -13832,7 +13832,7 @@ use RedBeanPHP\RedException as RedException;
  * Dispense Helper
  *
  * A helper class containing a dispense utility.
- * 
+ *
  * @file    RedBeanPHP/Util/DispenseHelper.php
  * @author  Gabor de Mooij and the RedBeanPHP Community
  * @license BSD/GPLv2
@@ -13954,8 +13954,8 @@ class DispenseHelper
 			if ( !isset( $typeOrBeanArray['_type'] ) ) {
 				$list = array();
 				foreach( $typeOrBeanArray as $beanArray ) {
-					if ( 
-						!( is_array( $beanArray ) 
+					if (
+						!( is_array( $beanArray )
 						&& isset( $beanArray['_type'] ) ) ) {
 						throw new RedException( 'Invalid Array Bean' );
 					}
@@ -13981,8 +13981,8 @@ class DispenseHelper
 
 		return $beanOrBeans;
 	}
-	
-	
+
+
 	/**
 	 * Takes a comma separated list of bean types
 	 * and dispenses these beans. For each type in the list
@@ -14046,7 +14046,7 @@ use RedBeanPHP\OODBBean as OODBBean;
  *
  * Dumps the contents of a bean in an array for
  * debugging purposes.
- * 
+ *
  * @file    RedBeanPHP/Util/Dump.php
  * @author  Gabor de Mooij and the RedBeanPHP Community
  * @license BSD/GPLv2
@@ -14395,7 +14395,7 @@ use RedBeanPHP\Finder;
  * A matchUp is a match-and-update combination in terms of beans.
  * Typically login related problems are all about a match and
  * a conditional update.
- * 
+ *
  * @file    RedBeanPHP/Util/MatchUp.php
  * @author  Gabor de Mooij and the RedBeanPHP Community
  * @license BSD/GPLv2
@@ -14498,7 +14498,7 @@ use RedBeanPHP\Finder;
  *
  * The Look Utility class provides an easy way to generate
  * tables and selects (pulldowns) from the database.
- * 
+ *
  * @file    RedBeanPHP/Util/Look.php
  * @author  Gabor de Mooij and the RedBeanPHP Community
  * @license BSD/GPLv2
@@ -14607,7 +14607,7 @@ use RedBeanPHP\Finder;
  *
  * The Look Utility class provides an easy way to generate
  * tables and selects (pulldowns) from the database.
- * 
+ *
  * @file    RedBeanPHP/Util/Diff.php
  * @author  Gabor de Mooij and the RedBeanPHP Community
  * @license BSD/GPLv2
