@@ -49,7 +49,9 @@
 						<div class="uploaded-image">
 							<img class="uploaded-image__img" src="<?=HOST?>usercontent/blog/<?=$post['post_img_preview']?>" alt="Загруженное изображение" />
 							<div class="uploaded-image__button">
-								<input type="submit" name="deleteImg" class="button button--del button--small" value="Удалить"> 
+								<?php if ( $post['post_img_preview'] != "" && $post['post_img_preview'] != "blog-no-image.jpg") { ?>
+								<input type="submit" name="deleteImg" class="button button--del button--small" value="Удалить">
+								<?php }  ?>
 							</div>
 						</div>
 					</div>

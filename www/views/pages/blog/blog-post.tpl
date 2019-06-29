@@ -6,7 +6,7 @@
 				<?php if ( isAdmin() ) {  ?>
 				<div class="blog-full-post__button-edit">
 					<a class="button button--edit" href="<?=HOST?>post-edit?id=<?=$post['id']?>">Редактировать</a>
-					<a class="button button--del" href="<?=HOST?>post-delete?id=<?=$post['id']?>">Удалить</a>
+					<a class="button button--del" href="<?=HOST?>post-delete?id=<?=$post['id']?>" style="heigth: 40px;">Удалить</a>
 				</div>
 				<?php } ?>
 
@@ -16,7 +16,7 @@
 
 				<h1 class="blog__heading <?=@$additionalHeaderClass?>"><?=$post['title']?></h1>
 
-				<div class="blog__info-wrap">
+				<div class="blog__info-wrap mt-20">
 					<span class="blog__name">
 						<?=$post['name']?>
 							<?=$post['lastname']?>

@@ -25,7 +25,7 @@ if (isset($_POST['deleteImg'])) {
 	$post->post_img = "blog-no-image.jpg";
 	$post->post_img_preview = "blog-no-image.jpg";
 	R::store($post);
-	header('Location: ' . HOST . "blog?result=postUpdated");
+	header('Location: ' . HOST . "post-edit?id=" .$_GET['id']);
 	exit();
 }
 
