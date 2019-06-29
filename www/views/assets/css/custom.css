@@ -63,8 +63,52 @@ input.button {
 
 .error--success {
 	background-color: #00a85a;
-	background-image: -webkit-gradient(linear, left bottom, left top, from(#006e3b), to(#00a85a)); 
-	background-image: -webkit-linear-gradient(bottom, #006e3b 0%, #00a85a 100%); 
+	background-image: -webkit-gradient(linear, left bottom, left top, from(#006e3b), to(#00a85a));
+	background-image: -webkit-linear-gradient(bottom, #006e3b 0%, #00a85a 100%);
 	background-image: -o-linear-gradient(bottom, #006e3b 0%, #00a85a 100%);
 	background-image: linear-gradient(to top, #006e3b 0%, #00a85a 100%);
+}
+
+.header__nav-link--active {
+	border-bottom: none;
+}
+
+.button--del {
+	font-size: 16px;
+	height: 44px;
+	padding-left: 1.8em;
+	padding-right: 1.8em;
+	line-height: 1;
+	padding-top: 0.68em;
+}
+
+.button--small {
+	font-size: 14px;
+	height: 2.2em;
+	padding-left: 1.3em;
+	padding-right: 1.3em;
+	line-height: 1;
+}
+
+.uploaded-image {
+	background-color: transparent;
+}
+
+.mr-330 {
+	margin-right: 330px !important;
+}
+
+html, body {
+    height: 100% !important;
+}
+
+body::before {
+    content: ;
+    display: none;
+}
+
+.sticky-footer {
+	display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }

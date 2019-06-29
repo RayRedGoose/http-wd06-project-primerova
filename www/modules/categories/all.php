@@ -1,11 +1,11 @@
 <?php
 
-$title = 'Блог - все записи';
+$title = 'Категории блога';
 
-$posts = R::find('posts', 'ORDER BY id DESC');
+$cats = R::find('categories', 'ORDER BY cat_title ASC');
 
 ob_start();
-include ROOT . '\views\pages\blog\blog-all-posts.tpl';
+include ROOT . '\views\pages\categories\all.tpl';
 $content = ob_get_contents();
 ob_end_clean();
 
