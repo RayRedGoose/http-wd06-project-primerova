@@ -6,6 +6,25 @@ $currentUser = $_SESSION['logged_user'];
 
 $user = R::load('users', $currentUser->id);
 
+if (isset($_POST['deleteAvatar'])) {
+
+	$avatarImg = $user->avatar;
+	$avatarImgFolderLocation = ROOT . '/usercontent/avatar/';
+	if ( $avatarImg != "" && $avatarImg !="no-avatar.jpg") {
+		$picurl = $avatarImgFolderLocation . $avatarImg;
+		// Удаляем...
+			if ( file_exists($picurl) ) { unlink($picurl); }
+		$picurl48 = $avatarImgFolderLocation . '48-' . $avatarImg;
+			if ( file_exists($picurl48) ) { unlink($picurl48); }
+	}
+
+	$user->avatar = "no-avatar.jpg";
+	$user->avatar_small = "no-avatar.jpg";
+	R::store($user);
+	header('Location: ' . HOST . "profile-edit");
+	exit();
+}
+
 if (isset($_POST['profile-update'])) {
   if ( trim($_POST['email']) == '' ) {
 		$errors[] = ['title' => 'Введите Email'];
@@ -27,7 +46,7 @@ if (isset($_POST['profile-update'])) {
     $user->country = htmlentities($_POST['country']);
 
     // img - start
-    if (isset($_FILES['avatar']['name'])) {
+    if (isset($_FILES['avatar']['name']) && $_FILES["avatar"]["tmp_name"] != "") {
 
       // переменные параметров файла
       $fileName = $_FILES["avatar"]["name"];
@@ -64,7 +83,7 @@ if (isset($_POST['profile-update'])) {
       $avatar = $user->avatar;
 			$avatarFolderLocation = ROOT . '/usercontent/avatar/';
 
-      if ( $avatar != "" ) {
+      if ( $avatar != "" && $avatar !="no-avatar.jpg" ) {
 				$picurl = $avatarFolderLocation . $avatar;
 				// Удаляем аватар
 				// die($picurl);
@@ -100,7 +119,12 @@ if (isset($_POST['profile-update'])) {
 
       $user->avatarSmall = "48-" . $db_file_name;
 
-    } 
+    } else if ($user->avatar == "") {
+
+      $post->avatar = "no-avatar.jpg";
+      $post->avatar_small = "no-avatar.jpg";
+      
+    }
     // img - end
 
     R::store($user);
