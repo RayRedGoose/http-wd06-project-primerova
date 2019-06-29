@@ -19,7 +19,9 @@
 	<!-- endbuild -->
 	<!-- build:cssCustom css/main.css -->
 	<link rel="stylesheet" href="<?=HOST?>views/assets/css/main.css" />
+	<link rel="stylesheet" href="<?=HOST?>views/assets/css/tables.css" />
 	<link rel="stylesheet" href="<?=HOST?>views/assets/css/custom.css" />
+
 	<!-- endbuild -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&amp;subset=cyrillic-ext" rel="stylesheet">
 	<!--[if lt IE 9]><script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->

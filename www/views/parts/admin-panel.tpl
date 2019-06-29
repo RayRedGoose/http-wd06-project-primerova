@@ -17,19 +17,24 @@
 	</div>
 	<div class="header-admin-nav">
 		<div class="header-admin-nav__items"><i class="fa fa-plus-circle header-admin-nav__icons"></i>
-			<a class="header-admin-nav__link" href="link">Пост</a>
+			<a class="header-admin-nav__link" href="<?=HOST?>post-new>">Пост</a>
 		</div>
+
+		<div class="header-admin-nav__items"><i class="fa fa-folder header-admin-nav__icons"></i>
+			<a class="header-admin-nav__link" href="<?=HOST?>categories">Категории</a>
+		</div>
+
 		<div class="header-admin-nav__items"><i class="fa fa-plus-circle header-admin-nav__icons"></i>
-			<a class="header-admin-nav__link" href="link">Работа</a>
+			<a class="header-admin-nav__link" href="<?=HOST?>portfolio>">Работа</a>
 		</div>
 		<div class="header-admin-nav__items"><i class="fa fa-edit header-admin-nav__icons"></i>
-			<a class="header-admin-nav__link" href="link">Обо мне</a>
+			<a class="header-admin-nav__link" href="<?=HOST?>about">Обо мне</a>
 		</div>
 		<div class="header-admin-nav__items"><i class="fa fa-edit header-admin-nav__icons"></i>
-			<a class="header-admin-nav__link" href="link">Контакты</a>
+			<a class="header-admin-nav__link" href="<?=HOST?>contacts">Контакты</a>
 		</div>
 		<div class="header-admin-nav__items"><i class="fa fa-envelope header-admin-nav__icons"></i>
-			<a class="header-admin-nav__link" href="link">Сообщение</a>
+			<a class="header-admin-nav__link" href="<?=HOST?>message">Сообщение</a>
 		</div>
 	</div>
 	<div class="header-admin__signout">
