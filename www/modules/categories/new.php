@@ -1,5 +1,10 @@
 <?php
 
+if ( !isAdmin() ) {
+	header("Location: " . HOST);
+	die();
+}
+
 $title = 'Добавление новой категории блога';
 
 if (isset($_POST['catNew'])) {

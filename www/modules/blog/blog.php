@@ -2,7 +2,7 @@
 
 $title = 'Блог - все записи';
 
-$posts = R::find('posts', 'ORDER BY id DESC');
+$posts = R::find('posts', 'ORDER BY update_time DESC');
 
 ob_start();
 include ROOT . '\views\pages\blog\blog-all-posts.tpl';

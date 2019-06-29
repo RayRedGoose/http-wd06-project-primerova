@@ -2,15 +2,15 @@
 
 $sql = '
 		SELECT
-			posts.id, posts.title, posts.text, posts.post_img, posts.date_time, posts.author_id, posts.cat,
-   			users.name, users.secondname,
+			posts.id, posts.title, posts.text, posts.post_img, posts.date_time, posts.author_id, posts.cat, posts.update_time,
+   			users.name, users.lastname,
     		categories.cat_title
 		FROM `posts`
 		INNER JOIN categories ON posts.cat = categories.id
 		INNER JOIN users ON posts.author_id = users.id
 		WHERE posts.id = ' . $_GET['id'] . ' LIMIT 1';
 
-$post = R::getAll( $sql );
+$post = R::getAll($sql);
 $post = $post[0];
 
 $title = $post['title'];

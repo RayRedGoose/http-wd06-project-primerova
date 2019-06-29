@@ -29,6 +29,9 @@
 					<span class="blog__date">
 						<? echo rus_date("j F Y H:i", strtotime($post['date_time']) ); ?>
 					</span>
+					<span class="blog__date">
+						<p class=" mb-0 mt-0">Обновлено: <? echo rus_date("j F Y H:i", strtotime($post['update_time']) ); ?></p>
+					</span>
 					<span class="blog__comments">
 						<a href="#">2 комментария</a>
 					</span>

@@ -64,15 +64,23 @@ switch ($uri[0]) {
     // blog section
 
   case 'blog':
-    include 'modules/blog/blog.php';
+    include ROOT . '\modules\blog\blog.php';
     break;
 
   case 'post-new':
-    include 'modules/blog/post-new.php';
+    include ROOT . '\modules\blog\post-new.php';
+    break;
+
+  case 'post-edit':
+    include ROOT . '\modules\blog\post-edit.php';
+    break;
+
+  case 'post-delete':
+    include ROOT . '\modules\blog\post-delete.php';
     break;
 
   case 'post':
-    include 'modules/blog/post.php';
+    include ROOT . '\modules\blog\post.php';
     break;
 
     // categories
