@@ -61,9 +61,39 @@ switch ($uri[0]) {
     include 'modules/contacts/contacts.php';
     break;
 
+    // blog section
+
   case 'blog':
     include 'modules/blog/blog.php';
     break;
+
+  case 'post-new':
+    include 'modules/blog/post-new.php';
+    break;
+
+  case 'post':
+    include 'modules/blog/post.php';
+    break;
+
+    // categories
+
+  case 'categories':
+  	include "modules/categories/all.php";
+  	break;
+
+  case 'category-new':
+  	include "modules/categories/new.php";
+  	break;
+
+  case 'category-edit':
+  	include "modules/categories/edit.php";
+  	break;
+
+  case 'category-delete':
+  	include "modules/categories/delete.php";
+  	break;
+
+    // blog section end
 
   default:
     include 'modules/error404/error404.php';

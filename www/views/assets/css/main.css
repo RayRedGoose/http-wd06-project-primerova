@@ -1318,10 +1318,7 @@ a.user-message__a:hover {
   padding-bottom: 55px;
 }
 .header__nav-link--active {
-  color: #fff;
-  font-size: 18px;
-  font-weight: 600;
-  text-decoration: none;
+  border-bottom: none;
 }
 .header__title {
   margin-top: 50px;
