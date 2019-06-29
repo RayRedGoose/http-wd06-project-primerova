@@ -6,7 +6,7 @@
 				<?php if ( isAdmin() ) {  ?>
 				<div class="blog-full-post__button-edit">
 					<a class="button button--edit" href="<?=HOST?>post-edit?id=<?=$post['id']?>">Редактировать</a>
-					<a class="button button--del" href="<?=HOST?>post-delete?id=<?=$post['id']?>" style="heigth: 40px;">Удалить</a>
+					<a class="button button--del" href="<?=HOST?>post-delete?id=<?=$post['id']?>" style="height: 40px;">Удалить</a>
 				</div>
 				<?php } ?>
 
