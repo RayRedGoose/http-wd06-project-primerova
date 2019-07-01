@@ -13,6 +13,10 @@ if ( isset($_POST['register'])) {
 		$errors[] = ['title' => 'Введите Пароль' ];
 	}
 
+	if(!preg_match("|^[-0-9a-z_\.]+@[-0-9a-z_^\.]+\.[a-z]{2,6}$|i", $_POST['email'])) {
+		$errors[] = ['title' => 'Неверное написание email'];
+	}
+
 
 	// Проверка наличия пользователя в базе данных
 	if ( R::count('users', 'email = ?', array($_POST['email']) ) > 0 ) {
