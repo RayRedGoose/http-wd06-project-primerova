@@ -38,6 +38,10 @@ if (isset($_POST['profile-update'])) {
 		$errors[] = ['title' => 'Введите Фамилию' ];
 	}
 
+	if(!preg_match("|^[-0-9a-z_\.]+@[-0-9a-z_^\.]+\.[a-z]{2,6}$|i", $_POST['email'])) {
+		$errors[] = ['title' => 'Неверное написание email'];
+	}
+
 	if ( empty($errors)) {
     $user->name = htmlentities($_POST['name']);
     $user->lastname = htmlentities($_POST['lastname']);
@@ -121,9 +125,9 @@ if (isset($_POST['profile-update'])) {
 
     } else if ($user->avatar == "") {
 
-      $post->avatar = "no-avatar.jpg";
-      $post->avatar_small = "no-avatar.jpg";
-      
+      $user->avatar = "no-avatar.jpg";
+      $user->avatar_small = "no-avatar.jpg";
+
     }
     // img - end
 

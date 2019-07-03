@@ -9,7 +9,7 @@
 	</div>
 
 	<div class="login-page-form__row">
-		<input name="email" class="input" type="email" placeholder="E-mail" value="info@mail.com" />
+		<input name="email" class="input" type="email" placeholder="E-mail" />
 	</div>
 	<div class="login-page-form__row text-center">
 

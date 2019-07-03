@@ -42,6 +42,18 @@
 							<span class="file__inner-caption">Файл не выбран</span>
 						</div>
 					</div>
+					<?php if ( $user['avatar'] != "") { ?>
+					<div class="control-row mt-30">
+						<div class="uploaded-image">
+							<img class="uploaded-image__img" src="<?=HOST?>usercontent/avatar/<?=$user['avatar']?>" alt="Загруженное изображение" />
+							<div class="uploaded-image__button">
+								<?php if ( $user['avatar'] != "" && $user['avatar'] != "no-avatar.jpg") { ?>
+								<input type="submit" name="deleteAvatar" class="button button--del button--small" value="Удалить">
+								<?php }  ?>
+							</div>
+						</div>
+					</div>
+					<?php }  ?>
 				</div>
 				<div class="row fieldset">
 					<div class="col-4">

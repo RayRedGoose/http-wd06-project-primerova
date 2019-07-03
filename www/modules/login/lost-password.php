@@ -8,6 +8,10 @@ if ( isset($_POST['lost-password'])) {
 		$errors[] = ['title' => 'Введите Email' ];
 	}
 
+	if(!preg_match("|^[-0-9a-z_\.]+@[-0-9a-z_^\.]+\.[a-z]{2,6}$|i", $_POST['email'])) {
+		$errors[] = ['title' => 'Неверное написание email'];
+	}
+
 	if ( empty($errors)) {
 
 		$user = R::findOne('users', 'email = ?', array($_POST['email']) );

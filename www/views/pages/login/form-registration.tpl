@@ -18,10 +18,10 @@
 		</div>
 	</div>
 	<div class="registration-page-form__row">
-		<input name="email" class="input" type="email" placeholder="E-mail" value="info@mail.com" />
+		<input name="email" class="input" type="email" placeholder="E-mail" />
 	</div>
 	<div class="registration-page-form__row">
-		<input name="password" class="input" type="password" placeholder="Пароль" value="123456" />
+		<input name="password" class="input" type="password" placeholder="Пароль" />
 	</div>
 	<div class="registration-page-form__footer">
 		<input name="register" type="hidden" value="register" />
