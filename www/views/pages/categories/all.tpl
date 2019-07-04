@@ -4,6 +4,8 @@
 		include ROOT . "/views/pages/categories/results.tpl";
 	} ?>
 
+	<?php require ROOT . "/views/parts/errors.tpl" ?>
+
 	<div class="row justify-content-between align-items-center pl-15 pr-15">
 		<div class="title-1">Категории блога</div>
 		<?php if ( isAdmin() ) {  ?>
@@ -33,7 +35,7 @@
 				<td>
 					<?=$cat['cat_title']?>
 				</td>
-				<?php if ( isAdmin() ) {  ?>
+				<?php if ( isAdmin() && $cat['id'] != 1) {  ?>
 				<td>
 					<a href="<?=HOST?>category-edit?id=<?=$cat['id']?>">Редактировать</a>
 				</td>

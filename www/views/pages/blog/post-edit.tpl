@@ -17,17 +17,21 @@
 				<div class="fieldset">
 					<label>
 						<div class="fieldset__title">Категория</div>
+						<?php if (empty($cats)) { ?>
 						<select name="postCat">
-
+							<option value="no_cat">
+								Без категории
+							</option>
+						</select>
+					<?php } else { ?>
+						<select name="postCat">
 							<?php foreach ($cats as $cat): ?>
-							<option value="<?=$cat['id']?>"
-									<?php echo ($post['cat']==$cat['id'] ) ? "selected" : ""; ?>
-								>
+							<option value="<?=$cat['id']?>">
 								<?=$cat['cat_title']?>
 							</option>
-							<?php endforeach ?>
-
+						<?php endforeach ?>
 						</select>
+					<?php } ?>
 					</label>
 				</div>
 

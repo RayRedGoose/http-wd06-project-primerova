@@ -9,12 +9,14 @@ $title = "Удалить категорию";
 
 $cat = R::load('categories', $_GET['id']);
 
-if ( isset($_POST['catDelete']) ) {
+if ( isset($_POST['catDelete']) && $_GET['id'] > 1 ) {
 
 	R::trash($cat);
 	header('Location: ' . HOST . "categories?result=catDeleted");
 	exit();
 
+} else if ($_GET['id'] == 1) {
+		$errors[]  = ['title' => 'Вы не можете удалить эту категорию'];
 }
 
 ob_start();

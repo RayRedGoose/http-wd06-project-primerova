@@ -11,7 +11,24 @@ $sql = '
 		WHERE posts.id = ' . $_GET['id'] . ' LIMIT 1';
 
 $post = R::getAll($sql);
-$post = $post[0];
+
+if (empty($post)) {
+	$sql = '
+			SELECT
+				posts.id, posts.title, posts.text, posts.post_img, posts.date_time, posts.author_id, posts.update_time,
+				users.name, users.lastname
+			FROM `posts`
+			INNER JOIN users ON posts.author_id = users.id
+			WHERE posts.id = ' . $_GET['id'] . ' LIMIT 1';
+
+	$post = R::getAll($sql);
+	$post = $post[0];
+
+	$post['cat_title'] = "Категория не выбрана";
+
+} else {
+	$post = $post[0];
+}
 
 $title = $post['title'];
 

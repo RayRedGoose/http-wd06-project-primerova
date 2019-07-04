@@ -17,7 +17,7 @@
 	</div>
 	<div class="header-admin-nav">
 		<div class="header-admin-nav__items"><i class="fa fa-plus-circle header-admin-nav__icons"></i>
-			<a class="header-admin-nav__link" href="<?=HOST?>post-new>">Пост</a>
+			<a class="header-admin-nav__link" href="<?=HOST?>post-new">Пост</a>
 		</div>
 
 		<div class="header-admin-nav__items"><i class="fa fa-folder header-admin-nav__icons"></i>
@@ -25,7 +25,7 @@
 		</div>
 
 		<div class="header-admin-nav__items"><i class="fa fa-plus-circle header-admin-nav__icons"></i>
-			<a class="header-admin-nav__link" href="<?=HOST?>portfolio>">Работа</a>
+			<a class="header-admin-nav__link" href="<?=HOST?>portfolio">Работа</a>
 		</div>
 		<div class="header-admin-nav__items"><i class="fa fa-edit header-admin-nav__icons"></i>
 			<a class="header-admin-nav__link" href="<?=HOST?>about">Обо мне</a>

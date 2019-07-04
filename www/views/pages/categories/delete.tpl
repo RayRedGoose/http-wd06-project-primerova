@@ -3,7 +3,7 @@
 		<div class="col-xl-10 offset-1">
 			<div class="title-1 m-0 pt-60">Удалить категорию</div>
 
-
+			<?php require ROOT . "/views/parts/errors.tpl" ?>
 
 			<form action="<?=HOST?>category-delete?id=<?=$cat['id']?>" method="POST" class="form mb-100 pb-20 pt-35">
 
