@@ -69,6 +69,12 @@ $(document).ready(function() {
 			mail.focus(function(event) {
 				$('.error').fadeOut();
 			});
+		} else if ( mail.val() != '/^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i') {
+			$('.error').fadeIn();
+			$('.error').text('Неверное написание email');
+			mail.focus(function(event) {
+				$('.error').fadeOut();
+			});
 		} else if ( password.val() == '' ) {
 			$('.error').fadeIn();
 			$('.error').text('Введите пароль');
@@ -99,6 +105,12 @@ $(document).ready(function() {
 			mail.focus(function(event) {
 				$('.error').fadeOut();
 			});
+		} else  if ( mail.val() != '/^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i') {
+			$('.error').fadeIn();
+			$('.error').text('Неверное написание email');
+			mail.focus(function(event) {
+				$('.error').fadeOut();
+			});
 		} else if ( password.val() == '' ) {
 			$('.error').fadeIn();
 			$('.error').text('Введите пароль');
@@ -121,6 +133,12 @@ $(document).ready(function() {
 			$('.error').fadeIn();
 			$('.error').text('Введите email');
 			input.focus(function(event) {
+				$('.error').fadeOut();
+			});
+		} else  if ( mail.val() != '/^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i') {
+			$('.error').fadeIn();
+			$('.error').text('Неверное написание email');
+			mail.focus(function(event) {
 				$('.error').fadeOut();
 			});
 		} else {
@@ -154,16 +172,5 @@ $(document).ready(function() {
 	$('[data-notify-hide]').dblclick(function(){
 		$(this).slideUp(400);
 	});
-
-	// исчезновение уведомлений
-	setTimeout(function(){
-		$('[data-notify-hide]').slideUp(400);
-	}, 2000);
-
-	$('[data-notify-hide]').dblclick(function(){
-		$(this).slideUp(400);
-	});
-
-
 
 });

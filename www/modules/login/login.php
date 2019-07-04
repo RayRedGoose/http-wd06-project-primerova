@@ -14,14 +14,12 @@ if (isset($_POST['login'])) {
 
   if(!preg_match("|^[-0-9a-z_\.]+@[-0-9a-z_^\.]+\.[a-z]{2,6}$|i", $_POST['email'])) {
     $errors[] = ['title' => 'Неверное написание email'];
-  }
-
-  if (!R::count('users', 'email = ?', array($_POST['email']) ) > 0 ) {
+  } else if (!R::count('users', 'email = ?', array($_POST['email']) ) > 0 ) {
     $errors[]  = [
             'title' => 'Пользователь не найден',
             'desc' => $_POST['email'] . '<p> не зарегистрирован</p>',
           ];
-  }
+    }
 
 	if ( empty($errors)) {
     $user = R::findOne('users', 'email = ?', array($_POST['email']));
