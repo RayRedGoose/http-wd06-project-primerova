@@ -15,6 +15,12 @@ if ( isset($_POST['contactsUpdate'])) {
 		$errors[] = ['title' => 'Введите Email' ];
 	}
 
+
+	 if(!preg_match("|^[-0-9a-z_\.]+@[-0-9a-z_^\.]+\.[a-z]{2,6}$|i", $_POST['email'])) {
+	   $errors[] = ['title' => 'Неверное написание email'];
+	 }
+
+
 	if ( trim($_POST['phone']) == '') {
 		$errors[] = ['title' => 'Введите Телефон' ];
 	}

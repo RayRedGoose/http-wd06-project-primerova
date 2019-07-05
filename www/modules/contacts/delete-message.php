@@ -5,12 +5,20 @@ if ( !isAdmin() ) {
 	die();
 }
 
-$title = 'Сообщения';
+$title = 'Удалить сообщение';
 
-$messages = R::find('messages', 'ORDER BY id DESC');
+$message = R::load('messages', $_GET['id']);
+
+if ( isset($_POST['deleteMessage'])) {
+
+	R::trash($message);
+	header('Location: ' . HOST . "messages?result==");
+	exit();
+
+}
 
 ob_start();
-include ROOT . '\views\pages\contacts\messages.tpl';
+include ROOT . '\views\pages\contacts\delete-message.tpl';
 $content = ob_get_contents();
 ob_end_clean();
 

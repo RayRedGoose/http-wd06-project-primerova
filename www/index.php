@@ -71,6 +71,10 @@ switch ($uri[0]) {
     include ROOT . '\modules\contacts\messages.php';
     break;
 
+  case 'delete-message':
+    include ROOT . '\modules\contacts\delete-message.php';
+    break;
+
     // blog section
 
   case 'blog':
