@@ -1,11 +1,14 @@
 <?php
 
-$title = 'Контакты';
+if ( !isAdmin() ) {
+	header("Location: " . HOST);
+	die();
+}
 
-$contacts = R::load('contacts', 1);
+$title = 'Сообщения';
 
 ob_start();
-include ROOT . '\views\pages\contacts\contacts.tpl';
+include ROOT . '\views\pages\contacts\messages.tpl';
 $content = ob_get_contents();
 ob_end_clean();
 

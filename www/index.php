@@ -57,8 +57,18 @@ switch ($uri[0]) {
     include 'modules/about/about.php';
     break;
 
+    // Contacts
+
   case 'contacts':
-    include 'modules/contacts/contacts.php';
+    include ROOT . '\modules\contacts\contacts.php';
+    break;
+
+  case 'contacts-edit':
+    include ROOT . '\modules\contacts\contacts-edit.php';
+    break;
+
+  case 'messages':
+    include ROOT . '\modules\contacts\messages.php';
     break;
 
     // blog section
