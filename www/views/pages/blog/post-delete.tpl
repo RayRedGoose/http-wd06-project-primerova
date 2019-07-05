@@ -18,7 +18,7 @@
 						<input type="submit" name="postDelete" class="button button--del" value="Удалить">
 					</div>
 					<div class="col-md-auto pl-10">
-						<a class="button" href="<?=HOST?>blog/categories">Отмена</a>
+						<a class="button" href="<?=HOST?>blog">Отмена</a>
 					</div>
 				</div>
 

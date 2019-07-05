@@ -32,9 +32,15 @@
 					<span class="blog__date">
 						<p class=" mb-0 mt-0">Обновлено: <? echo rus_date("j F Y H:i", strtotime($post['update_time']) ); ?></p>
 					</span>
-					<span class="blog__comments">
-						<a href="#">2 комментария</a>
-					</span>
+					<?php if ( count($comments) > 0) { ?>
+						<span class="blog__comments">
+							<a href="#comments"><?php commentNumber( count($comments) );?></a>
+						</span>
+					<?php } else { ?>
+						<span class="blog__comments">
+							<a href="#addComment">Комментарии отсутствуют</a>
+						</span>
+					<?php } ?>
 				</div>
 
 				<?php if ( $post['post_img'] != "") { ?>
@@ -50,57 +56,17 @@
 					<a class="button " href="#"><i class="fas fa-arrow-left icon-style icon-style--back"></i>Назад</a>
 					<a class="button" href="#">Вперед<i class="fas fa-arrow-right icon-style"></i></a>
 				</div>
-				<h3 class="user-comment-header">2 комментария</h3>
-				<div class="user-comment">
-					<div class="user-comment-avatar">
-						<div class="avatar--small">
-							<img src="../img/avatars/avatar-2.jpg" alt="avatar-small" />
-						</div>
-					</div>
-					<div class="user-comment-wrap">
-						<div class="comment-wrap">
-							<div class="user-name">Джо До</div>
-							<div class="user-date"><i class="far fa-clock"></i>
-								<span class="user-date--dat">05 Мая 2017 года в 15:45</span>
-							</div>
-						</div>
-						<p class="user-text">Замечательный парк, обязательно отправлюсь туда этим летом.</p>
-					</div>
-				</div>
-				<div class="user-comment">
-					<div class="user-comment-avatar">
-						<div class="avatar--small">
-							<img src="../img/avatars/avatar-3.jpg" alt="avatar-small" />
-						</div>
-					</div>
-					<div class="user-comment-wrap">
-						<div class="comment-wrap">
-							<div class="user-name">Джо До</div>
-							<div class="user-date"><i class="far fa-clock"></i>
-								<span class="user-date--dat">05 Мая 2017 года в 15:45</span>
-							</div>
-						</div>
-						<p class="user-text">Замечательный парк, обязательно отправлюсь туда этим летом.</p>
-					</div>
-				</div>
-				<div class="title-2 mb-15">Оставить комментарий</div>
-				<div class="comment-add-wrapper">
-					<div class="comment-add__avatar float-left">
-						<div class="avatar--small">
-							<img src="../img/avatars/avatar-1.jpg" alt="avatar-small" />
-						</div>
-					</div>
-					<div class="comment-add-block">
-						<div class="comment-add-block__name">Юрий Ключевский</div>
-						<div class="error">Комментарий не может быть пустым.</div>
-						<div class="comment-add-block__text mt-10">
-							<textarea class="textarea" rows="5" placeholder="Введите текст сообщения"></textarea>
-						</div>
-					</div>
-					<div class="comment-add__button mt-10">
-						<a class="button" href="#">Опубликовать</a>
-					</div>
-				</div>
+					<?php if ( count($comments) > 0) { ?>
+					<h3 class="user-comment-header" id="comments"><?php commentNumber( count($comments) );?></h3>
+
+					<?php foreach ($comments as $comment) {
+						include ROOT . "/views/pages/blog/comment-card.tpl";
+					} ?>
+				<?php } ?>
+
+				<!-- Добавление комментария  -->
+				<?php include ROOT . "/views/pages/blog/add-comment-form.tpl"  ?>
+
 			</div>
 		</div>
 	</div>

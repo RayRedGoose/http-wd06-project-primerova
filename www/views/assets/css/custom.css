@@ -112,3 +112,35 @@ body::before {
     flex-direction: column;
     justify-content: space-between;
 }
+
+.avatar--small {
+	width: 48px;
+	height: 48px;
+	background-size: cover;
+}
+
+.clearfix:before {
+	content: "";
+	display: block;
+}
+
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.contact-item {
+	margin-bottom: 15px;
+}
+
+.contact-social-link {
+	font-weight: 700;
+	margin-bottom: 15px;
+	display: block;
+}
+
+.comment__button-delete {
+  position: absolute !important;
+  right: 0 !important;
+}

@@ -14,4 +14,11 @@
 <div class="error error--success" data-notify-hide>
 	Пост успешно отредактирован.
 </div>
+
+<?php if ( $_GET['result'] == 'commentDeleted' ) { ?>
+<div class="error" data-notify-hide>
+	Комментарий был удален.
+</div>
+<?php  } ?>
+
 <?php  } ?>

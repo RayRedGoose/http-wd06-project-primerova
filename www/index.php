@@ -83,6 +83,10 @@ switch ($uri[0]) {
     include ROOT . '\modules\blog\post.php';
     break;
 
+  case 'delete-comment':
+    include ROOT . '\modules\blog\delete-comment.php';
+    break;
+
     // categories
 
   case 'categories':

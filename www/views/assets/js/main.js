@@ -41,16 +41,21 @@ $(document).ready(function() {
 		.on( 'focus', function(){ $(this).addClass( 'has-focus' ); })
 		.on( 'blur', function(){ $(this).removeClass( 'has-focus' ); });
 
-	$('.comment-add__button').on('click', function(e){
+	// ----- check comment form ----- //
+
+	$('input[data-add-comment]').on('click', function(e){
 		e.preventDefault();
 		comment = $('.comment-add-block__text').children('.textarea');
 		if ( comment.val() == '' ) {
-			$('.error').fadeIn();
+			$('.error[data-error-comment-empty]').fadeIn();
 			comment.focus(function(event) {
-				$('.error').fadeOut();
+				$('.error[data-error-comment-empty]').fadeOut();
 			});
+		} else {
+			$('#commentForm').submit();
 		}
 	});
+
 	// ----- check login form ----- //
 	$('.button--enter').on('click', function(e){
 		e.preventDefault();
@@ -66,12 +71,6 @@ $(document).ready(function() {
 		} else if ( mail.val() == '') {
 			$('.error').fadeIn();
 			$('.error').text('Введите логин');
-			mail.focus(function(event) {
-				$('.error').fadeOut();
-			});
-		} else if ( mail.val() != '/^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i') {
-			$('.error').fadeIn();
-			$('.error').text('Неверное написание email');
 			mail.focus(function(event) {
 				$('.error').fadeOut();
 			});
@@ -105,12 +104,6 @@ $(document).ready(function() {
 			mail.focus(function(event) {
 				$('.error').fadeOut();
 			});
-		} else  if ( mail.val() != '/^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i') {
-			$('.error').fadeIn();
-			$('.error').text('Неверное написание email');
-			mail.focus(function(event) {
-				$('.error').fadeOut();
-			});
 		} else if ( password.val() == '' ) {
 			$('.error').fadeIn();
 			$('.error').text('Введите пароль');
@@ -133,12 +126,6 @@ $(document).ready(function() {
 			$('.error').fadeIn();
 			$('.error').text('Введите email');
 			input.focus(function(event) {
-				$('.error').fadeOut();
-			});
-		} else  if ( mail.val() != '/^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i') {
-			$('.error').fadeIn();
-			$('.error').text('Неверное написание email');
-			mail.focus(function(event) {
 				$('.error').fadeOut();
 			});
 		} else {
