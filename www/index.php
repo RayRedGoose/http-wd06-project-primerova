@@ -51,10 +51,26 @@ switch ($uri[0]) {
     include ROOT . 'modules/profile/profile-edit.php';
     break;
 
-    // end of USERS
+    // about
 
   case 'about':
     include ROOT . 'modules/about/about.php';
+    break;
+
+	case 'edit-text':
+		include ROOT . "modules/about/edit-text.php";
+		break;
+
+	case 'edit-skills':
+		include ROOT . "modules/about/edit-skills.php";
+		break;
+
+	case 'edit-jobs':
+		include ROOT . "modules/about/edit-jobs.php";
+		break;
+
+  case 'delete-job':
+    include ROOT . "modules/about/delete-job.php";
     break;
 
     // Contacts

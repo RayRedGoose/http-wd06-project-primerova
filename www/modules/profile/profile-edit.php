@@ -9,8 +9,9 @@ $user = R::load('users', $currentUser->id);
 if (isset($_POST['deleteAvatar'])) {
 
 	$avatarImg = $user->avatar;
+	$avatarImgSm = $user->avatar_small;
 	$avatarImgFolderLocation = ROOT . 'usercontent/avatar/';
-	if ( $avatarImg != "" && $avatarImg !="no-avatar.jpg") {
+	if ( $avatarImg != "" && $avatarImg !="no-avatar.jpg" && $avatarImgSm !="48-no-avatar.jpg") {
 		$picurl = $avatarImgFolderLocation . $avatarImg;
 		// Удаляем...
 			if ( file_exists($picurl) ) { unlink($picurl); }
@@ -19,10 +20,11 @@ if (isset($_POST['deleteAvatar'])) {
 	}
 
 	$user->avatar = "no-avatar.jpg";
-	$user->avatar_small = "no-avatar.jpg";
+	$user->avatar_small = "48-no-avatar.jpg";
 	R::store($user);
 	header('Location: ' . HOST . "profile-edit");
 	exit();
+
 }
 
 if (isset($_POST['profile-update'])) {

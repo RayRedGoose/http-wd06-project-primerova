@@ -144,3 +144,43 @@ body::before {
   position: absolute !important;
   right: 0 !important;
 }
+.indicator {
+	position: relative;
+	display: inline-block;
+}
+
+.indicator__value {
+	font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 0.005em;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.circle__bg {
+	fill: transparent;
+	stroke-width: 10px;
+	stroke: rgba(226,226,226,0.05);
+}
+
+.circle__indicator {
+	fill: transparent;
+	stroke-width: 10px;
+	stroke: rgba(255,255,255,0.5);
+	transform-origin: center;
+	transform: rotate(-90deg);
+}
+
+.circle__indicator--green {
+	stroke: #3aaa35;
+}
+
+.circle__indicator--blue {
+	stroke: #009cf5;
+}
+
+.circle__indicator--yellow {
+	stroke: #ffcc00;
+}
