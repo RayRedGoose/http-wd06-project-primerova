@@ -64,12 +64,12 @@ if (!empty($_GET['email'])) {
 
 // central part content
 ob_start();
-include ROOT . '\views\pages\login\form-set-new-password.tpl';
+include ROOT . 'views/pages/login/form-set-new-password.tpl';
 $content = ob_get_contents();
 ob_end_clean();
 
-include ROOT . '\views\parts\head.tpl';
-include ROOT . '\views\pages\login\login-page.tpl';
-include ROOT . '\views\parts\foot.tpl';
+include ROOT . 'views/parts/head.tpl';
+include ROOT . 'views/pages/login/login-page.tpl';
+include ROOT . 'views/parts/foot.tpl';
 
 ?>

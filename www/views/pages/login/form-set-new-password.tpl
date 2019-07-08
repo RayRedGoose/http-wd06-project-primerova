@@ -3,8 +3,8 @@
 		<div class="login-page-form__header">Введите новый пароль</div>
 	<?php endif ?>
 
-  <?php require ROOT . '\views\parts\errors.tpl' ?>
-	<?php require ROOT . '\views\parts\success.tpl' ?>
+  <?php require ROOT . 'views/parts/errors.tpl' ?>
+	<?php require ROOT . 'views/parts/success.tpl' ?>
 
 	<div class="registration-page-form__row">
 		<div class="error hidden"></div>

@@ -11,7 +11,7 @@
 		<div class="col-xl-12">
 			<div class="title-1 m-0 pt-60">Редактировать данные</div>
 
-			<?php require ROOT . "/views/parts/errors.tpl" ?>
+			<?php require ROOT . "views/parts/errors.tpl" ?>
 
 			<form action="<?=HOST?>contacts-edit" method="POST" class="form mb-100 pb-20 pt-35">
 				<div class="row fieldset">

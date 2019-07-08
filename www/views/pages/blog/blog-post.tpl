@@ -60,12 +60,12 @@
 					<h3 class="user-comment-header" id="comments"><?php commentNumber( count($comments) );?></h3>
 
 					<?php foreach ($comments as $comment) {
-						include ROOT . "/views/pages/blog/comment-card.tpl";
+						include ROOT . "views/pages/blog/comment-card.tpl";
 					} ?>
 				<?php } ?>
 
 				<!-- Добавление комментария  -->
-				<?php include ROOT . "/views/pages/blog/add-comment-form.tpl"  ?>
+				<?php include ROOT . "views/pages/blog/add-comment-form.tpl"  ?>
 
 			</div>
 		</div>

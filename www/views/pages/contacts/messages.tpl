@@ -5,7 +5,7 @@
 
 				<?php if (!empty($messages)) {
 					foreach ($messages as $message){
-						include ROOT . "/views/pages/contacts/message-card.tpl";
+						include ROOT . "views/pages/contacts/message-card.tpl";
 					}
         } else { ?>
 

@@ -1,17 +1,15 @@
 <div class="container mt-50">
 	<?php if ( isAdmin() ) { ?>
 		<div class="flex-wrap-button">
-			<div class="mr-20">
-				<a class="button button--edit" href="<?=HOST?>contacts-edit"> Редактировать</a>
-			</div>
+			<a class="button button--edit" href="<?=HOST?>contacts-edit" style="height: 44px;"> Редактировать</a>
 			<a class="button" href="<?=HOST?>messages">Сообщения</a>
 		</div>
 	<?php }  ?>
 
 	<div class="row mb-80">
-		<div class="col-md-10">
+		<div class="col-md-12">
 			<div class="row justify-content-between">
-				<div class="col-md-6">
+				<div class="col-md-5">
 					<h2 class="title-2 extrabold">Контакты</h2>
 
 					<?php function showContactItem($name, $title){
@@ -88,11 +86,11 @@
 
 
 				</div>
-				<div class="col-md-5">
+				<div class="col-md-4">
 					<h2 class="title-2 extrabold">Связаться со мной</h2>
 
-					<?php include ROOT . "/views/parts/errors.tpl" ?>
-					<?php include ROOT . "/views/parts/success.tpl" ?>
+					<?php include ROOT . "views/parts/errors.tpl" ?>
+					<?php include ROOT . "views/parts/success.tpl" ?>
 
 					<form class="form" action="<?=HOST?>contacts" method="POST" enctype="multipart/form-data">
 						<input name="name" class="input mb-10" placeholder="Введите имя" />

@@ -43,7 +43,7 @@ if ( isset($_POST['newMessage'])) {
 				$errors[] = ['title' => 'An unknown error occurred' ];
 			}
 
-			$postImgFolderLocation = ROOT . '/usercontent/upload_files/';
+			$postImgFolderLocation = ROOT . 'usercontent/upload_files/';
 
 			// Перемещаем загруженный файл в нужную директорию
 			$uploadfile = $postImgFolderLocation . $db_file_name;
@@ -69,14 +69,14 @@ if ( isset($_POST['newMessage'])) {
 }
 
 ob_start();
-include ROOT . '\views\pages\contacts\contacts.tpl';
+include ROOT . 'views/pages/contacts/contacts.tpl';
 $content = ob_get_contents();
 ob_end_clean();
 
-include ROOT . '\views\parts\head.tpl';
-include ROOT . '\views\parts\header.tpl';
-include ROOT . '\views\template.tpl';
-include ROOT . '\views\parts\footer.tpl';
-include ROOT . '\views\parts\foot.tpl';
+include ROOT . 'views/parts/head.tpl';
+include ROOT . 'views/parts/header.tpl';
+include ROOT . 'views/template.tpl';
+include ROOT . 'views/parts/footer.tpl';
+include ROOT . 'views/parts/foot.tpl';
 
 ?>

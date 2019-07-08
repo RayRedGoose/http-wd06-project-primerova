@@ -11,7 +11,7 @@ $post = R::load('posts', $_GET['id']);
 
 if ( isset($_POST['postDelete']) ) {
 
-	$postImgFolderLocation = ROOT . '/usercontent/blog/';
+	$postImgFolderLocation = ROOT . 'usercontent/blog/';
 	$postImg = $post->post_img;
 	if ( $postImg != "" && $postImg != "blog-no-image.jpg") {
 		$picurl = $postImgFolderLocation . $postImg;
@@ -29,14 +29,14 @@ if ( isset($_POST['postDelete']) ) {
 }
 
 ob_start();
-include ROOT . '\views\pages\blog\post-delete.tpl';
+include ROOT . 'views/pages/blog/post-delete.tpl';
 $content = ob_get_contents();
 ob_end_clean();
 
-include ROOT . '\views\parts\head.tpl';
-include ROOT . '\views\parts\header.tpl';
-include ROOT . '\views\template.tpl';
-include ROOT . '\views\parts\footer.tpl';
-include ROOT . '\views\parts\foot.tpl';
+include ROOT . 'views/parts/head.tpl';
+include ROOT . 'views/parts/header.tpl';
+include ROOT . 'views/template.tpl';
+include ROOT . 'views/parts/footer.tpl';
+include ROOT . 'views/parts/foot.tpl';
 
 ?>

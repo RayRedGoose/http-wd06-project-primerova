@@ -47,13 +47,13 @@ if ( isset($_POST['register'])) {
 
 // central part content
 ob_start();
-include ROOT . '\views\pages\login\form-registration.tpl';
+include ROOT . 'views/pages/login/form-registration.tpl';
 $content = ob_get_contents();
 ob_end_clean();
 
-include ROOT . '\views\parts\head.tpl';
-include ROOT . '\views\pages\login\login-page.tpl';
-include ROOT . '\views\parts\foot.tpl';
+include ROOT . 'views/parts/head.tpl';
+include ROOT . 'views/pages/login/login-page.tpl';
+include ROOT . 'views/parts/foot.tpl';
 
 
 ?>

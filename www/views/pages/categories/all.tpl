@@ -1,10 +1,10 @@
 <div class="container pb-60 pt-50">
 
 	<?php if ( isset($_GET['result'])) {
-		include ROOT . "/views/pages/categories/results.tpl";
+		include ROOT . "views/pages/categories/results.tpl";
 	} ?>
 
-	<?php require ROOT . "/views/parts/errors.tpl" ?>
+	<?php require ROOT . "views/parts/errors.tpl" ?>
 
 	<div class="row justify-content-between align-items-center pl-15 pr-15">
 		<div class="title-1">Категории блога</div>

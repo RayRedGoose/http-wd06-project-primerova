@@ -1,8 +1,8 @@
 <form id="lostForm" class="login-page-form" method="POST" action="<?=HOST?>lost-password">
 	<div class="login-page-form__header">Забыл пароль</div>
 
-	<?php require ROOT . '\views\parts\errors.tpl' ?>
-	<?php require ROOT . '\views\parts\success.tpl' ?>
+	<?php require ROOT . 'views/parts/errors.tpl' ?>
+	<?php require ROOT . 'views/parts/success.tpl' ?>
 
 	<div class="registration-page-form__row">
 		<div class="error hidden">Введите email</div>

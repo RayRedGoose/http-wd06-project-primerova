@@ -3,7 +3,7 @@
 		<div class="col-xl-10 offset-1">
 			<div class="title-1 m-0 pt-60">Редактировать пост</div>
 
-			<?php require ROOT . "/views/parts/errors.tpl" ?>
+			<?php require ROOT . "views/parts/errors.tpl" ?>
 
 			<form action="<?=HOST?>post-edit?id=<?=$post['id']?>" method="POST" enctype="multipart/form-data" class="form mb-100 pb-20 pt-35">
 
@@ -66,7 +66,7 @@
 					<label>
 						<div class="fieldset__title">Содержание</div>
 						<textarea id="ckEditor" name="postText" class="textarea height-200" rows="7" placeholder="Введите описание"><?=$post['text']?></textarea>
-						<?php include_once ROOT . "/views/parts/ckEditorConnect.tpl" ?>
+						<?php include_once ROOT . "views/parts/ckEditorConnect.tpl" ?>
 
 					</label>
 				</div>

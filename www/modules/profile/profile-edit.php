@@ -9,7 +9,7 @@ $user = R::load('users', $currentUser->id);
 if (isset($_POST['deleteAvatar'])) {
 
 	$avatarImg = $user->avatar;
-	$avatarImgFolderLocation = ROOT . '/usercontent/avatar/';
+	$avatarImgFolderLocation = ROOT . 'usercontent/avatar/';
 	if ( $avatarImg != "" && $avatarImg !="no-avatar.jpg") {
 		$picurl = $avatarImgFolderLocation . $avatarImg;
 		// Удаляем...
@@ -85,7 +85,7 @@ if (isset($_POST['profile-update'])) {
 
       // проверка установлен ли аватара
       $avatar = $user->avatar;
-			$avatarFolderLocation = ROOT . '/usercontent/avatar/';
+			$avatarFolderLocation = ROOT . 'usercontent/avatar/';
 
       if ( $avatar != "" && $avatar !="no-avatar.jpg" ) {
 				$picurl = $avatarFolderLocation . $avatar;
@@ -105,7 +105,7 @@ if (isset($_POST['profile-update'])) {
 				$errors[] = ['title' => 'Ошибка сохранения файла'];
 			}
 
-      include_once ROOT . '\libs\image_resize.php';
+      include_once ROOT . 'libs/image_resize.php';
 
       $target_file =  $avatarFolderLocation . $db_file_name;
 			$resized_file = $avatarFolderLocation . $db_file_name;
@@ -140,14 +140,14 @@ if (isset($_POST['profile-update'])) {
 }
 
 ob_start();
-include ROOT . '\views\pages\profile\profile-edit.tpl';
+include ROOT . 'views/pages/profile/profile-edit.tpl';
 $content = ob_get_contents();
 ob_end_clean();
 
-include ROOT . '\views\parts\head.tpl';
-include ROOT . '\views\parts\header.tpl';
-include ROOT . '\views\template.tpl';
-include ROOT . '\views\parts\footer.tpl';
-include ROOT . '\views\parts\foot.tpl';
+include ROOT . 'views/parts/head.tpl';
+include ROOT . 'views/parts/header.tpl';
+include ROOT . 'views/template.tpl';
+include ROOT . 'views/parts/footer.tpl';
+include ROOT . 'views/parts/foot.tpl';
 
 ?>

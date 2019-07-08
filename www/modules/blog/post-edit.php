@@ -13,7 +13,7 @@ $cats = R::find('categories', 'ORDER BY cat_title ASC');
 if (isset($_POST['deleteImg'])) {
 
 	$postImg = $post->post_img;
-	$postImgFolderLocation = ROOT . '/usercontent/blog/';
+	$postImgFolderLocation = ROOT . 'usercontent/blog/';
 	if ( $postImg != "" && $postImg !="blog-no-image.jpg") {
 		$picurl = $postImgFolderLocation . $postImg;
 		// Удаляем...
@@ -78,7 +78,7 @@ if (isset($_POST['postUpdate'])) {
 
 			// Перемещаем загруженный файл в нужную директорию
 			$db_file_name = rand(100000000000,999999999999) . "." . $fileExt;
-			$postImgFolderLocation = ROOT . '/usercontent/blog/';
+			$postImgFolderLocation = ROOT . 'usercontent/blog/';
 			$uploadfile = $postImgFolderLocation . $db_file_name;
 			$moveResult = move_uploaded_file($fileTmpLoc, $uploadfile);
 
@@ -97,7 +97,7 @@ if (isset($_POST['postUpdate'])) {
 				$errors[] = ['title' => 'Ошибка сохранения файла' ];
 			}
 
-      include_once ROOT . '\libs\image_resize.php';
+      include_once ROOT . 'libs/image_resize.php';
 
       $target_file =  $postImgFolderLocation . $db_file_name;
       $resized_file = $postImgFolderLocation . $db_file_name;
@@ -130,14 +130,14 @@ if (isset($_POST['postUpdate'])) {
 }
 
 ob_start();
-include ROOT . '\views\pages\blog\post-edit.tpl';
+include ROOT . 'views/pages/blog/post-edit.tpl';
 $content = ob_get_contents();
 ob_end_clean();
 
-include ROOT . '\views\parts\head.tpl';
-include ROOT . '\views\parts\header.tpl';
-include ROOT . '\views\template.tpl';
-include ROOT . '\views\parts\footer.tpl';
-include ROOT . '\views\parts\foot.tpl';
+include ROOT . 'views/parts/head.tpl';
+include ROOT . 'views/parts/header.tpl';
+include ROOT . 'views/template.tpl';
+include ROOT . 'views/parts/footer.tpl';
+include ROOT . 'views/parts/foot.tpl';
 
 ?>

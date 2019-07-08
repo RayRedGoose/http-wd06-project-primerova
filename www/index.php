@@ -18,111 +18,111 @@ $uri = explode('?', $uri);
 
 switch ($uri[0]) {
   case '':
-    include 'modules/main/main.php';
+    include ROOT . 'modules/main/main.php';
     break;
 
     // USERS
 
   case 'login':
-    include ROOT . '\modules\login\login.php';
+    include ROOT . 'modules/login/login.php';
     break;
 
   case 'registration':
-    include ROOT . '\modules\login\registration.php';
+    include ROOT . 'modules/login/registration.php';
     break;
 
   case 'logout':
-    include ROOT . '\modules\login\logout.php';
+    include ROOT . 'modules/login/logout.php';
     break;
 
   case 'lost-password':
-    include ROOT . '\modules\login\lost-password.php';
+    include ROOT . 'modules/login/lost-password.php';
     break;
 
   case 'set-new-password':
-    include ROOT . '\modules\login\set-new-password.php';
+    include ROOT . 'modules/login/set-new-password.php';
     break;
 
   case 'profile':
-    include ROOT . '\modules\profile\profile.php';
+    include ROOT . 'modules/profile/profile.php';
     break;
 
   case 'profile-edit':
-    include ROOT . '\modules\profile\profile-edit.php';
+    include ROOT . 'modules/profile/profile-edit.php';
     break;
 
     // end of USERS
 
   case 'about':
-    include 'modules/about/about.php';
+    include ROOT . 'modules/about/about.php';
     break;
 
     // Contacts
 
   case 'contacts':
-    include ROOT . '\modules\contacts\contacts.php';
+    include ROOT . 'modules/contacts/contacts.php';
     break;
 
   case 'contacts-edit':
-    include ROOT . '\modules\contacts\contacts-edit.php';
+    include ROOT . 'modules/contacts/contacts-edit.php';
     break;
 
   case 'messages':
-    include ROOT . '\modules\contacts\messages.php';
+    include ROOT . 'modules/contacts/messages.php';
     break;
 
   case 'delete-message':
-    include ROOT . '\modules\contacts\delete-message.php';
+    include ROOT . 'modules/contacts/delete-message.php';
     break;
 
     // blog section
 
   case 'blog':
-    include ROOT . '\modules\blog\blog.php';
+    include ROOT . 'modules/blog/blog.php';
     break;
 
   case 'post-new':
-    include ROOT . '\modules\blog\post-new.php';
+    include ROOT . 'modules/blog/post-new.php';
     break;
 
   case 'post-edit':
-    include ROOT . '\modules\blog\post-edit.php';
+    include ROOT . 'modules/blog/post-edit.php';
     break;
 
   case 'post-delete':
-    include ROOT . '\modules\blog\post-delete.php';
+    include ROOT . 'modules/blog/post-delete.php';
     break;
 
   case 'post':
-    include ROOT . '\modules\blog\post.php';
+    include ROOT . 'modules/blog/post.php';
     break;
 
   case 'delete-comment':
-    include ROOT . '\modules\blog\delete-comment.php';
+    include ROOT . 'modules/blog/delete-comment.php';
     break;
 
     // categories
 
   case 'categories':
-  	include "modules/categories/all.php";
+  	include ROOT . "modules/categories/all.php";
   	break;
 
   case 'category-new':
-  	include "modules/categories/new.php";
+  	include ROOT . "modules/categories/new.php";
   	break;
 
   case 'category-edit':
-  	include "modules/categories/edit.php";
+  	include ROOT . "modules/categories/edit.php";
   	break;
 
   case 'category-delete':
-  	include "modules/categories/delete.php";
+  	include ROOT . "modules/categories/delete.php";
   	break;
 
     // blog section end
 
   default:
-    include 'modules/error404/error404.php';
+    include ROOT . 'modules/error404/error404.php';
     break;
 }
 

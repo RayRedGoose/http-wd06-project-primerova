@@ -2,7 +2,7 @@
 	<div class="login-page-form__header">Вход на сайт</div>
 
 
-	<?php require ROOT . '\views\parts\errors.tpl'?>
+	<?php require ROOT . 'views/parts/errors.tpl'?>
 
 	<div class="registration-page-form__row">
 		<div class="error hidden">Введите email</div>
