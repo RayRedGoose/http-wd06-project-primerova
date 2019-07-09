@@ -1,12 +1,12 @@
 <?php
 
-$details = R::find('about');
+$title = "Главная";
 
-$personName = $details[1]['name'];
-$personDscrp = $details[1]['dscrp'];
+$about = R::findOne('about', 1);
+$posts = R::find('posts', 'ORDER BY id DESC LIMIT 3');
 
 ob_start();
-include ROOT . 'views/pages/main.tpl';
+include ROOT . 'views/pages/main_page/main.tpl';
 $content = ob_get_contents();
 ob_end_clean();
 

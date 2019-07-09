@@ -1,8 +1,8 @@
 <div class="container mt-50">
 	<?php if ( isAdmin() ) { ?>
 		<div class="flex-wrap-button">
-			<a class="button button--edit" href="<?=HOST?>contacts-edit" style="height: 44px;"> Редактировать</a>
-			<a class="button" href="<?=HOST?>messages">Сообщения</a>
+			<a class="button button--edit mr-15" href="<?=HOST?>contacts-edit"> Редактировать</a>
+			<a class="button ml-15" style="height: 40px; line-height: 0.9;" href="<?=HOST?>messages">Сообщения</a>
 		</div>
 	<?php }  ?>
 
