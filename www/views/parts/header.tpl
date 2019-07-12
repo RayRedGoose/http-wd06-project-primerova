@@ -26,4 +26,5 @@
 		</div>
 		<?php include( ROOT . 'views/parts/header-nav.tpl'); ?>
 	</div>
+	<?php include( ROOT . "views/parts/cart-in-header.tpl"); ?>
 </div>

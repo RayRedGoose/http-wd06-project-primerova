@@ -1,5 +1,6 @@
 <?php
 
+$pagintation = pagination(3, 'posts');
 $title = 'Блог - все записи';
 
 $posts = R::find('posts', 'ORDER BY update_time DESC');

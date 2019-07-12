@@ -1,5 +1,6 @@
     <!-- build:jsLibs js/libs.js -->
     <script src="<?=HOST?>views/assets/libs/jquery/jquery.min.js"></script>
+    <script src="<?=HOST?>libs/jquery.cookie.js"></script>
     <!-- endbuild -->
     <!-- build:jsMain js/main.js -->
     <script src="<?=HOST?>views/assets/js/main.js"></script>

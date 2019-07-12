@@ -145,4 +145,26 @@ function price_format($price){
 	return number_format($price, 0, '', ' ');
 }
 
+function itemsNumber ($num) {
+
+    //Оставляем две последние цифры от $num
+	$number = substr($num, -2);
+
+	if($number >= 5) {
+
+		$term = "ов";
+
+	} else {
+
+		$number = substr($number, -1);
+
+		if($number == 0) {$term = "ов";}
+		if($number == 1 ) {$term = "";}
+		if($number > 1 && $number < 5 ) {$term = "а";}
+
+	}
+
+	echo  $num.' товар'.$term;
+}
+
 ?>

@@ -30,6 +30,14 @@ if (isset($_POST['login'])) {
         $_SESSION['login'] = "1";
         $_SESSION['role'] = $user->role;
 
+        if ( isset($_POST['rememberMe']) ) {
+					ini_set('session.gc_maxlifetime', 31104000); // 60*60*24*30*12 = 1 год
+					ini_set('session.cookie_lifetime', 31104000);
+				}
+
+				// Сравнение и обновление корзины вынесено в отдельный файл
+				require ROOT . "modules/cart/cart-update-in-login.php";
+
         header("Location: " . HOST);
         exit();
       } else {
@@ -38,6 +46,7 @@ if (isset($_POST['login'])) {
     }
   }
 }
+
 // central part content
 ob_start();
 include ROOT . 'views/pages/login/form-login.tpl';

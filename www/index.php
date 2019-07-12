@@ -157,6 +157,20 @@ switch ($uri[0]) {
     include ROOT . "modules/shop/item-delete.php";
     break;
 
+    // cart
+
+  case 'addtocart':
+    include ROOT . "modules/cart/add-to-cart.php";
+    break;
+
+  case 'cart':
+    include ROOT . "modules/cart/cart.php";
+    break;
+
+  case 'removefromcart':
+    include ROOT . "modules/cart/remove-from-cart.php";
+    break;
+
   default:
     include ROOT . 'modules/error404/error404.php';
     break;
