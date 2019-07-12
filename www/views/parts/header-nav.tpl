@@ -7,7 +7,7 @@
 			<a class="header__nav-link<?=($uri[0] == "about") ? "--active" : ""?>" href="<?=HOST?>about">Обо мне</a>
 		</li>
 		<li class="header__nav-items">
-			<a class="header__nav-link<?=($uri[0] == "portfolio") ? "--active" : ""?>" href="<?=HOST?>portfolio">Работы</a>
+			<a class="header__nav-link<?=($uri[0] == "shop") ? "--active" : ""?>" href="<?=HOST?>shop">Магазин</a>
 		</li>
 		<li class="header__nav-items">
 			<a class="header__nav-link<?=($uri[0] == "blog") ? "--active" : ""?>" href="<?=HOST?>blog">Блог</a>

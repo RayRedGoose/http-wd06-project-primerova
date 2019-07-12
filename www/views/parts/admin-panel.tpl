@@ -25,7 +25,7 @@
 		</div>
 
 		<div class="header-admin-nav__items"><i class="fa fa-plus-circle header-admin-nav__icons"></i>
-			<a class="header-admin-nav__link" href="<?=HOST?>portfolio">Работа</a>
+			<a class="header-admin-nav__link" href="<?=HOST?>item-new">Магазин</a>
 		</div>
 		<div class="header-admin-nav__items"><i class="fa fa-edit header-admin-nav__icons"></i>
 			<a class="header-admin-nav__link" href="<?=HOST?>about">Обо мне</a>
