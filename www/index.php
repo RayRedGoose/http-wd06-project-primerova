@@ -171,6 +171,32 @@ switch ($uri[0]) {
     include ROOT . "modules/cart/remove-from-cart.php";
     break;
 
+    // orders
+
+  case 'order-create':
+    include ROOT . "modules/order/order-create.php";
+    break;
+
+  case 'order-created-success':
+    include ROOT . "modules/order/order-created-success.php";
+    break;
+
+  case 'orders':
+    include ROOT . "modules/order/orders.php";
+    break;
+
+  case 'order':
+    include ROOT . "modules/order/order.php";
+    break;
+
+  case 'myorders':
+    include ROOT . "modules/order/myorders.php";
+    break;
+
+  case 'myorder':
+    include ROOT . "modules/order/myorder.php";
+    break;
+
   default:
     include ROOT . 'modules/error404/error404.php';
     break;

@@ -29,8 +29,14 @@
 				<?php } ?>
 			</tbody>
 		</table>
-
-
+		<div class="row mt-20">
+			<div class="col-md-auto pr-10">
+				<a href="<?=HOST?>order-create" class="button button--save">Оформить заказ</a>
+			</div>
+			<div class="col-md-auto pl-10">
+				<a class="button" href="<?=HOST?>cart">Отмена</a>
+			</div>
+		</div>
 
 	<?php } else { ?>
 

@@ -27,6 +27,9 @@
 		<div class="header-admin-nav__items"><i class="fa fa-plus-circle header-admin-nav__icons"></i>
 			<a class="header-admin-nav__link" href="<?=HOST?>item-new">Магазин</a>
 		</div>
+		<div class="header-admin-nav__items"><i class="fa fa-envelope header-admin-nav__icons"></i>
+			<a class="header-admin-nav__link" href="<?=HOST?>orders">Заказы</a>
+		</div>
 		<div class="header-admin-nav__items"><i class="fa fa-edit header-admin-nav__icons"></i>
 			<a class="header-admin-nav__link" href="<?=HOST?>about">Обо мне</a>
 		</div>
@@ -34,7 +37,7 @@
 			<a class="header-admin-nav__link" href="<?=HOST?>contacts-edit">Контакты</a>
 		</div>
 		<div class="header-admin-nav__items"><i class="fa fa-envelope header-admin-nav__icons"></i>
-			<a class="header-admin-nav__link" href="<?=HOST?>messages">Сообщение</a>
+			<a class="header-admin-nav__link" href="<?=HOST?>messages">Сообщения</a>
 		</div>
 	</div>
 	<div class="header-admin__signout">

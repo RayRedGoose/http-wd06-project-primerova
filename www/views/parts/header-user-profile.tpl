@@ -15,6 +15,7 @@
 		<div class="header-user__buttons-group">
 			<div class="header-user__buttons-profile mr-10">
 				<a class="button button--profile" href="<?=HOST?>profile"> Профиль</a>
+				<a class="button button--profile  ml-10" href="<?=HOST?>myorders"> Заказы</a>
 			</div>
 			<div class="header-user__buttons-signout">
 				<a class="button button--profile" href="<?=HOST?>logout"> Выход</a>
