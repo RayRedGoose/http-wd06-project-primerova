@@ -27,6 +27,8 @@ if ( isset($_POST['newJob'])) {
 		$job->title = htmlentities($_POST['title']);
 		$job->description = htmlentities($_POST['description']);
 		R::store($job);
+		header('Location: ' . HOST . "about");
+		exit();
 	}
 
 }

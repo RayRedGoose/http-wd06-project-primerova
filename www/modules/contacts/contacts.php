@@ -8,11 +8,28 @@ if ( isset($_POST['newMessage'])) {
 
 	if ( trim($_POST['email']) == '') {
 		$errors[] = ['title' => 'Введите Email' ];
-	}
-
-  if(!preg_match("|^[-0-9a-z_\.]+@[-0-9a-z_^\.]+\.[a-z]{2,6}$|i", $_POST['email'])) {
+	} else if(!preg_match("|^[-0-9a-z_\.]+@[-0-9a-z_^\.]+\.[a-z]{2,6}$|i", $_POST['email'])) {
     $errors[] = ['title' => 'Неверное написание email'];
   }
+
+	if ( trim($_POST['name']) == '') {
+		$errors[] = ['title' => 'Введите имя'];
+	}
+
+	if ( trim($_POST['message']) == '') {
+		$errors[] = ['title' => 'Введите сообщение'];
+	}
+
+	if ( !isset($_FILES["file"]["name"])) {
+		if($_FILES["file"]["size"] > 4194304) {
+			$errors[] = ['title' => 'Your image file was larger than 4mb' ];
+		} else if (!preg_match("/\.(gif|jpg|png|pdf|doc)$/i", $_FILES["file"]["name"]) ) {
+			$errors[] = ['title' => 'Неверный формат файла', 'desc' => 'Файл должен иметь следующие расширения: jpg, gif, png, pdf, doc' ];
+		} else if ($_FILES["file"]["error"] == 1) {
+			$errors[] = ['title' => 'An unknown error occurred'];
+		}
+	}
+
 
 	if ( empty($errors)) {
 
@@ -35,14 +52,6 @@ if ( isset($_POST['newMessage'])) {
 
 			$db_file_name = rand(100000000000,999999999999) . "." . $fileExt;
 
-			if($fileSize > 4194304) {
-				$errors[] = ['title' => 'Your image file was larger than 4mb' ];
-			} else if (!preg_match("/\.(gif|jpg|png|pdf|doc)$/i", $fileName) ) {
-				$errors[] = ['title' => 'Файл должен иметь следующие расширения: jpg, gif, png, pdf, doc' ];
-			} else if ($fileErrorMsg == 1) {
-				$errors[] = ['title' => 'An unknown error occurred' ];
-			}
-
 			$postImgFolderLocation = ROOT . 'usercontent/upload_files/';
 
 			// Перемещаем загруженный файл в нужную директорию
@@ -60,12 +69,10 @@ if ( isset($_POST['newMessage'])) {
 
 		R::store($message);
 
-		$success[] = ['title' => 'Сообщение было успешно отправлено!' ];
+		$success[] = ['title' => 'Сообщение было успешно отправлено!'];
 
 
 	}
-
-
 }
 
 ob_start();
