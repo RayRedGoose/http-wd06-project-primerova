@@ -197,6 +197,24 @@ switch ($uri[0]) {
     include ROOT . "modules/order/myorder.php";
     break;
 
+    // Payment
+
+  case 'payment-choice':
+  	include ROOT . "modules/payments/payment-choice.php";
+  	break;
+
+  case 'payment-yandex':
+  	include ROOT . "modules/payments/yandex-payment.php";
+  	break;
+
+  case 'after-payment':
+  	include ROOT . "modules/payments/after-payment.php";
+  	break;
+
+  case 'payment-yandex-notify':
+  	include ROOT . "modules/payments/payment-yandex-notify.php";
+  	break;
+
   default:
     include ROOT . 'modules/error404/error404.php';
     break;

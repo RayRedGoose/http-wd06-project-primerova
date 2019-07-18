@@ -12,6 +12,8 @@ define('ROOT', dirname(__FILE__) . '/');
 define('SITE_NAME', 'Сайт портфолио - webdev06');
 define('SITE_EMAIL', 'info@webdev06.com');
 define('ADMIN_EMAIL', 'info@rightblog.ru');
+define('YANDEX_WALLET', '410018973974382');
+define('YANDEX_SECRET', '1yK/2nzY82OFspeqW/FPK0PP');
 
 
 ?>
