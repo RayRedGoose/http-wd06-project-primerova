@@ -20,15 +20,18 @@ if ( isset($_POST['newMessage'])) {
 		$errors[] = ['title' => 'Введите сообщение'];
 	}
 
-	if ( !isset($_FILES["file"]["name"])) {
-		if($_FILES["file"]["size"] > 4194304) {
-			$errors[] = ['title' => 'Your image file was larger than 4mb' ];
-		} else if (!preg_match("/\.(gif|jpg|png|pdf|doc)$/i", $_FILES["file"]["name"]) ) {
-			$errors[] = ['title' => 'Неверный формат файла', 'desc' => 'Файл должен иметь следующие расширения: jpg, gif, png, pdf, doc' ];
-		} else if ($_FILES["file"]["error"] == 1) {
-			$errors[] = ['title' => 'An unknown error occurred'];
-		}
+	if($_FILES["file"]["size"] > 4194304) {
+		$errors[] = ['title' => 'Your image file was larger than 4mb' ];
 	}
+
+	if (!preg_match("/\.(gif|jpg|png|pdf|doc)$/i", $_FILES["file"]["name"]) ) {
+		$errors[] = ['title' => 'Неверный формат файла', 'desc' => 'Файл должен иметь следующие расширения: jpg, gif, png, pdf, doc' ];
+	}
+
+	if ($_FILES["file"]["error"] == 1) {
+		$errors[] = ['title' => 'An unknown error occurred'];
+	}
+
 
 
 	if ( empty($errors)) {

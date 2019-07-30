@@ -83,8 +83,6 @@
 					<?php showContactItem('phone', 'Телефон'); ?>
 					<?php showContactItem('address', 'Адрес'); ?>
 
-
-
 				</div>
 				<div class="col-md-4">
 					<h2 class="title-2 extrabold">Связаться со мной</h2>
