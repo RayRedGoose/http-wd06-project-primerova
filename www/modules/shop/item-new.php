@@ -13,8 +13,16 @@ if ( isset($_POST['itemNew']) ) {
 		$errors[] = ['title' => 'Введите Название товара' ];
 	}
 
-	if ( trim($_POST['price']) == '') {
+	if ( trim($_POST['price']) == '' )) {
 		$errors[] = ['title' => 'Введите Стоимость товара' ];
+	}
+
+	if ( !preg_match("|^[\d]*$|", $_POST['price'])) {
+		$errors[] = ['title' => 'Введите корректную стоимость товара' ];
+	}
+
+	if ( !preg_match("|^[\d]*$|", $_POST['priceOld'])) {
+		$errors[] = ['title' => 'Введите корректную стоимость товара' ];
 	}
 
 	if ( empty($errors)) {

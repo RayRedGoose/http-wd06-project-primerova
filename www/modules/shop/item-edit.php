@@ -19,6 +19,14 @@ if ( isset($_POST['itemUpdate'])) {
 		$errors[] = ['title' => 'Введите Стоимость товара' ];
 	}
 
+	if ( !preg_match("|^[\d]*$|", $_POST['price'])) {
+		$errors[] = ['title' => 'Введите корректную стоимость товара' ];
+	}
+
+	if ( !preg_match("|^[\d]*$|", $_POST['priceOld'])) {
+		$errors[] = ['title' => 'Введите корректную стоимость товара' ];
+	}
+
 	if ( empty($errors)) {
 
 		$item->title = htmlentities($_POST['title']);

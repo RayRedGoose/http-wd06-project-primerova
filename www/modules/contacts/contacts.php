@@ -20,17 +20,20 @@ if ( isset($_POST['newMessage'])) {
 		$errors[] = ['title' => 'Введите сообщение'];
 	}
 
-	if($_FILES["file"]["size"] > 4194304) {
-		$errors[] = ['title' => 'Your image file was larger than 4mb' ];
+	if ( isset($_FILES["file"]["name"]) && $_FILES["file"]["tmp_name"] != "" ) {
+		if($_FILES["file"]["size"] > 4194304) {
+			$errors[] = ['title' => 'Your image file was larger than 4mb' ];
+		}
+
+		if (!preg_match("/\.(gif|jpg|png|pdf|doc)$/i", $_FILES["file"]["name"]) ) {
+			$errors[] = ['title' => 'Неверный формат файла', 'desc' => 'Файл должен иметь следующие расширения: jpg, gif, png, pdf, doc' ];
+		}
+
+		if ($_FILES["file"]["error"] == 1) {
+			$errors[] = ['title' => 'An unknown error occurred'];
+		}
 	}
 
-	if (!preg_match("/\.(gif|jpg|png|pdf|doc)$/i", $_FILES["file"]["name"]) ) {
-		$errors[] = ['title' => 'Неверный формат файла', 'desc' => 'Файл должен иметь следующие расширения: jpg, gif, png, pdf, doc' ];
-	}
-
-	if ($_FILES["file"]["error"] == 1) {
-		$errors[] = ['title' => 'An unknown error occurred'];
-	}
 
 
 
@@ -63,11 +66,11 @@ if ( isset($_POST['newMessage'])) {
 
 			if ($moveResult != true) {
 				$errors[] = ['title' => 'File upload failed' ];
+			} else {
+				$message->message_file_name_original = $fileName;
+				$message->message_file = $db_file_name;
 			}
-
-			$message->message_file_name_original = $fileName;
-			$message->message_file = $db_file_name;
-
+			
 		}
 
 		R::store($message);
