@@ -13,7 +13,7 @@ if ( isset($_POST['itemNew']) ) {
 		$errors[] = ['title' => 'Введите Название товара' ];
 	}
 
-	if ( trim($_POST['price']) == '' )) {
+	if ( trim($_POST['price']) == '') {
 		$errors[] = ['title' => 'Введите Стоимость товара' ];
 	}
 
