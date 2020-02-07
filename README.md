@@ -2,6 +2,8 @@
 
 Deployed at [Personal Blog](https://personalblogproject.000webhostapp.com/)
 
+## Setup
+
 For login as admin use:
 
 username: admin@mail.com
